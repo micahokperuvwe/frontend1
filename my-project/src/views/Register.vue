@@ -27,6 +27,9 @@
         <span class="text-gray-400">Already have an account? </span>
         <router-link to="/login" class="font-medium text-blue-500 hover:text-blue-400 transition">Sign in</router-link>
       </div>
+      <div class="text-center">
+        <router-link to="/" class="text-xs text-gray-500 hover:text-gray-400 transition">← Back to home</router-link>
+      </div>
     </div>
   </div>
 </template>

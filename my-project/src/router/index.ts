@@ -4,7 +4,7 @@ import { useAuthStore } from '../stores/auth';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', redirect: '/chat' },
+        { path: '/', component: () => import('../views/Home.vue') },
         { path: '/login', component: () => import('../views/Login.vue'), meta: { requiresGuest: true } },
         { path: '/register', component: () => import('../views/Register.vue'), meta: { requiresGuest: true } },
         {
@@ -15,7 +15,7 @@ const router = createRouter({
     ]
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
     const authStore = useAuthStore();
 
     if (to.meta.requiresAuth && !authStore.token) {

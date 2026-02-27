@@ -23,6 +23,9 @@
         <span class="text-gray-400">Don't have an account? </span>
         <router-link to="/register" class="font-medium text-blue-500 hover:text-blue-400 transition">Register now</router-link>
       </div>
+      <div class="text-center">
+        <router-link to="/" class="text-xs text-gray-500 hover:text-gray-400 transition">← Back to home</router-link>
+      </div>
     </div>
   </div>
 </template>
