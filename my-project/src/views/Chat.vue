@@ -421,16 +421,18 @@ const resetCallState = () => {
 };
 
 const toggleAudio = () => {
-  if (localStream.value) {
+  if (localStream.value && localStream.value.getAudioTracks().length > 0) {
     audioEnabled.value = !audioEnabled.value;
-    localStream.value.getAudioTracks()[0].enabled = audioEnabled.value;
+    const track = localStream.value.getAudioTracks()[0];
+    if (track) track.enabled = audioEnabled.value;
   }
 };
 
 const toggleVideo = () => {
   if (localStream.value && localStream.value.getVideoTracks().length > 0) {
     videoEnabled.value = !videoEnabled.value;
-    localStream.value.getVideoTracks()[0].enabled = videoEnabled.value;
+    const track = localStream.value.getVideoTracks()[0];
+    if (track) track.enabled = videoEnabled.value;
   }
 };
 
